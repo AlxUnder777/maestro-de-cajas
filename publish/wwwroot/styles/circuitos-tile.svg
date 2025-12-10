@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <rect width="400" height="400" fill="#0F1A2A"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 60 H400 M0 200 H400 M0 320 H400" stroke="#00E5FF" stroke-width="1.5" opacity="0.8"/>
+    <path d="M60 0 V400 M200 0 V400 M340 0 V400" stroke="#0094FF" stroke-width="1.2" opacity="0.7"/>
+    <path d="M0 120 L120 0 M280 400 L400 280" stroke="#3CFF8F" stroke-width="1" opacity="0.6"/>
+    <path d="M0 260 L260 0 M140 400 L400 140" stroke="#00E5FF" stroke-width="1" opacity="0.55"/>
+    <path d="M60 60 H120 V120 H60 Z" stroke="#00E5FF" stroke-width="1.2" fill="none" opacity="0.7"/>
+    <path d="M200 200 h80 v-40 h40 v-40" stroke="#3CFF8F" stroke-width="1.2" fill="none" opacity="0.65"/>
+    <path d="M340 320 h-60 v-60 h60 v60" stroke="#0094FF" stroke-width="1.2" fill="none" opacity="0.65"/>
+    <circle cx="60" cy="60" r="4" fill="#00E5FF" opacity="0.9"/>
+    <circle cx="120" cy="120" r="4" fill="#3CFF8F" opacity="0.9"/>
+    <circle cx="200" cy="200" r="5" fill="#00E5FF" opacity="0.95"/>
+    <circle cx="280" cy="200" r="4" fill="#0094FF" opacity="0.85"/>
+    <circle cx="340" cy="320" r="5" fill="#3CFF8F" opacity="0.95"/>
+    <circle cx="60" cy="320" r="4" fill="#0094FF" opacity="0.85"/>
+    <circle cx="200" cy="60" r="4" fill="#00E5FF" opacity="0.9"/>
+  </g>
+</svg>

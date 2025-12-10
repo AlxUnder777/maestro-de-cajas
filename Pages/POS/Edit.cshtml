@@ -1,0 +1,86 @@
+@page "{id:int}"
+@model MaestroDeCajasWeb.Pages.POS.EditModel
+@{
+    ViewData["Title"] = "Editar POS";
+}
+
+<div class="container mt-4">
+    <h2>Editar POS</h2>
+    <hr />
+
+    <form method="post">
+        <input type="hidden" asp-for="Pos.Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.COD_SUCURSAL" class="form-label">Código Sucursal *</label>
+                <input asp-for="Pos.COD_SUCURSAL" class="form-control" required />
+                <span asp-validation-for="Pos.COD_SUCURSAL" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.NRO_CAJA" class="form-label">Nro. Caja *</label>
+                <input asp-for="Pos.NRO_CAJA" class="form-control" required />
+                <span asp-validation-for="Pos.NRO_CAJA" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.DEPARTAMENTO" class="form-label">Departamento *</label>
+                <input asp-for="Pos.DEPARTAMENTO" class="form-control" required />
+                <span asp-validation-for="Pos.DEPARTAMENTO" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.TIPO_POOL" class="form-label">Tipo Pool *</label>
+                <input asp-for="Pos.TIPO_POOL" class="form-control" required />
+                <span asp-validation-for="Pos.TIPO_POOL" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.PISO" class="form-label">Piso *</label>
+                <input asp-for="Pos.PISO" type="number" class="form-control" required />
+                <span asp-validation-for="Pos.PISO" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.ACTIVO" class="form-label">Activo *</label>
+                <input asp-for="Pos.ACTIVO" class="form-control" required />
+                <span asp-validation-for="Pos.ACTIVO" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.IP" class="form-label">IP *</label>
+                <input asp-for="Pos.IP" class="form-control" required />
+                <span asp-validation-for="Pos.IP" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Pos.MODELO" class="form-label">Modelo *</label>
+                <input asp-for="Pos.MODELO" class="form-control" required />
+                <span asp-validation-for="Pos.MODELO" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="Pos.UltimaActualizacion" type="hidden" />
+        </div>
+
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

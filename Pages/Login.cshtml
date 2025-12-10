@@ -1,0 +1,47 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@attribute [AllowAnonymous]
+@model MaestroDeCajasWeb.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Maestro de Cajas";
+    ViewData["HideNav"] = true;
+}
+
+<div class="min-h-screen flex items-center justify-center login-bg @(Model.LoginError ? " bg-flash-error" : "")">
+    <div class="login-card w-full max-w-lg
+                @(Model.LoginError ? " login-error" : "")
+                @(Model.LoginOk    ? " login-success" : "")">
+
+        <div class="text-center mb-6 space-y-2">
+            <h1 class="login-title uppercase">Maestro de Cajas</h1>
+           
+        </div>
+
+        <form method="post" class="space-y-4 mt-2">
+            <div>
+                <label class="block text-sm mb-2 text-slate-100/90 tracking-wide">Usuario</label>
+                <input asp-for="Username" class="login-input" />
+            </div>
+
+            <div>
+                <label class="block text-sm mb-2 text-slate-100/90 tracking-wide">Contrasena</label>
+                <input asp-for="Password" type="password" class="login-input" />
+            </div>
+
+            <button type="submit" class="login-btn">
+                ENTRAR
+            </button>
+
+        </form>
+    </div>
+</div>
+
+@if (Model.LoginOk && !string.IsNullOrEmpty(Model.RedirectUrl))
+{
+    <script>
+        setTimeout(function () {
+            window.location = '@Model.RedirectUrl';
+        }, 800);
+    </script>
+}

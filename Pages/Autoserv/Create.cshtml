@@ -1,0 +1,21 @@
+﻿@page "/Autoserv/Create"
+@model MaestroDeCajasWeb.Pages.Autoserv.CreateModel
+
+<h2 class="text-2xl font-bold mb-4">Nuevo Autoservicio</h2>
+
+<form method="post">
+
+    <label>Sucursal</label>
+    <input asp-for="Registro.COD_SUCURSAL" class="input input-bordered w-full" />
+
+    <label>N° Caja</label>
+    <input asp-for="Registro.NRO_CAJA" class="input input-bordered w-full" />
+
+    <label>Departamento</label>
+    <input asp-for="Registro.DEPARTAMENTO" class="input input-bordered w-full" />
+
+    <label>IP</label>
+    <input asp-for="Registro.IP" class="input input-bordered w-full" />
+
+    <button class="btn btn-success mt-4" type="submit">Guardar</button>
+</form>

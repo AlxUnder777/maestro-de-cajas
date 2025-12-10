@@ -1,0 +1,50 @@
+body {
+    background:#0d0d0d;
+    margin:0;
+    color:#eee;
+    font-family:Arial;
+}
+.header-cyber {
+    background:#180000;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #ff0033;
+}
+.logo-cyber {
+    color:#ff2255;
+    font-size:26px;
+}
+.content-wrapper {
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+th {
+    background:#300010;
+    padding:10px;
+    color:#ff5577;
+    border-bottom:2px solid #ff1133;
+}
+td {
+    padding:10px;
+    border-bottom:1px solid #441122;
+}
+.btn {
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+.btn-main {
+    background:#ff0066;
+    color:white;
+}
+.btn-danger {
+    background:#aa0022;
+    color:white;
+}

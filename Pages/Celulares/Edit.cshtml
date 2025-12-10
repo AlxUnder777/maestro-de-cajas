@@ -1,0 +1,64 @@
+@page "{id:int}"
+@model MaestroDeCajasWeb.Pages.Celulares.EditModel
+@{
+    ViewData["Title"] = "Editar Celular de Guardia";
+}
+
+<div class="container mt-4">
+    <h2>Editar Celular de Guardia</h2>
+    <hr />
+
+    <form method="post">
+        <input type="hidden" asp-for="CelularGuardia.Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="CelularGuardia.COD_SUCURSAL" class="form-label">Código Sucursal *</label>
+                <input asp-for="CelularGuardia.COD_SUCURSAL" class="form-control" required />
+                <span asp-validation-for="CelularGuardia.COD_SUCURSAL" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="CelularGuardia.MAC_WIFI" class="form-label">MAC WiFi *</label>
+                <input asp-for="CelularGuardia.MAC_WIFI" class="form-control" required />
+                <span asp-validation-for="CelularGuardia.MAC_WIFI" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="CelularGuardia.USO" class="form-label">Uso *</label>
+                <input asp-for="CelularGuardia.USO" class="form-control" required />
+                <span asp-validation-for="CelularGuardia.USO" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="CelularGuardia.FUNCIONANDO" class="form-label">Funcionando *</label>
+                <input asp-for="CelularGuardia.FUNCIONANDO" class="form-control" required />
+                <span asp-validation-for="CelularGuardia.FUNCIONANDO" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CelularGuardia.ESPECIFICAR_ERROR" class="form-label">Especificar Error *</label>
+            <input asp-for="CelularGuardia.ESPECIFICAR_ERROR" class="form-control" required />
+            <span asp-validation-for="CelularGuardia.ESPECIFICAR_ERROR" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="CelularGuardia.UltimaActualizacion" type="hidden" />
+        </div>
+
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

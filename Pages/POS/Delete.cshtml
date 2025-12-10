@@ -1,0 +1,53 @@
+@page "{id:int}"
+@model MaestroDeCajasWeb.Pages.POS.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar POS";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar POS</h2>
+    <hr />
+
+    <h3>¿Está seguro que desea eliminar este registro?</h3>
+
+    <div class="alert alert-warning">
+        <strong>Esta acción no se puede deshacer.</strong>
+    </div>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@Model.Pos.Id</dd>
+
+        <dt class="col-sm-3">Código Sucursal:</dt>
+        <dd class="col-sm-9">@Model.Pos.COD_SUCURSAL</dd>
+
+        <dt class="col-sm-3">Nro. Caja:</dt>
+        <dd class="col-sm-9">@Model.Pos.NRO_CAJA</dd>
+
+        <dt class="col-sm-3">Departamento:</dt>
+        <dd class="col-sm-9">@Model.Pos.DEPARTAMENTO</dd>
+
+        <dt class="col-sm-3">Tipo Pool:</dt>
+        <dd class="col-sm-9">@Model.Pos.TIPO_POOL</dd>
+
+        <dt class="col-sm-3">Piso:</dt>
+        <dd class="col-sm-9">@Model.Pos.PISO</dd>
+
+        <dt class="col-sm-3">Activo:</dt>
+        <dd class="col-sm-9">@Model.Pos.ACTIVO</dd>
+
+        <dt class="col-sm-3">IP:</dt>
+        <dd class="col-sm-9">@Model.Pos.IP</dd>
+
+        <dt class="col-sm-3">Modelo:</dt>
+        <dd class="col-sm-9">@Model.Pos.MODELO</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Pos.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+

@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: maestro-de-cajas
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      ASPNETCORE_ENVIRONMENT: "Production"

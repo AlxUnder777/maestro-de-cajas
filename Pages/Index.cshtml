@@ -1,0 +1,120 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="w-full flex flex-col items-center justify-start mt-10 mb-12 px-4 md:px-6">
+
+    <!-- Hero -->
+    <div class="menu-hero maestro-hero space-y-2">
+        <p class="maestro-tag">Ripley Core Systems</p>
+        <h1 class="maestro-title uppercase">Maestro De Cajas</h1>
+    </div>
+
+    <!-- Grid de modulos -->
+    <div class="menu-hero w-full mt-12">
+        <div class="menu-grid">
+
+            <!-- POS -->
+            <div class="glass neon-border module-card module-pos module-shell rounded-2xl">
+                <span class="led led-ok led-pulse" aria-label="Estado OK"></span>
+                <div class="card-body">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-chip" aria-hidden="true">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v14l-2-1.2-2 1.2-2-1.2-2 1.2-2-1.2-2 1.2V5A1.5 1.5 0 0 1 7 3.5Z" />
+                                <path d="M9 7.5h6M9 10.5h6M9 13.5h3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="module-tag">POS</p>
+                            <h2 class="module-title leading-tight">Gestion POS</h2>
+                        </div>
+                    </div>
+                    <p class="module-desc text-sm md:text-base">Administracion de terminales bancarias</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/POS" class="btn-arcade w-full font-semibold text-slate-900">Acceder</a>
+                </div>
+            </div>
+
+            <!-- RPOS -->
+            <div class="glass neon-border module-card module-rpos module-shell rounded-2xl">
+                <span class="led led-warn led-pulse" aria-label="Advertencia leve"></span>
+                <div class="card-body">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-chip" aria-hidden="true">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="5" width="16" height="12" rx="2" />
+                                <path d="M7 9h10M9 12h2m2 0h2M9 15h6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="module-tag">RPOS</p>
+                            <h2 class="module-title leading-tight">Gestion RPOS</h2>
+                        </div>
+                    </div>
+                    <p class="module-desc text-sm md:text-base">Cajas registradoras fisicas</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/RPOS" class="btn-arcade w-full font-semibold text-slate-900">Acceder</a>
+                </div>
+            </div>
+
+            <!-- Autoservicio -->
+            <div class="glass neon-border module-card module-auto module-shell rounded-2xl">
+                <span class="led led-ok" aria-label="Estado OK"></span>
+                <div class="card-body">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-chip" aria-hidden="true">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="8" width="14" height="10" rx="2" />
+                                <rect x="9" y="4" width="6" height="4" rx="1" />
+                                <path d="M9 12h.01M15 12h.01M10 16h4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="module-tag">Autoservicio</p>
+                            <h2 class="module-title leading-tight">Autoservicio</h2>
+                        </div>
+                    </div>
+                    <p class="module-desc text-sm md:text-base">Kioskos de autoservicio y SSAA</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Autoserv" class="btn-arcade w-full font-semibold text-slate-900">Acceder</a>
+                </div>
+            </div>
+
+            <!-- Celulares Guardia -->
+            <div class="glass neon-border module-card module-cel module-shell rounded-2xl">
+                <span class="led led-ok led-pulse" aria-label="Estado OK"></span>
+                <div class="card-body">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-chip" aria-hidden="true">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="7" y="3" width="10" height="18" rx="2" />
+                                <circle cx="12" cy="17.5" r="0.8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="module-tag">Guardia</p>
+                            <h2 class="module-title leading-tight">Celulares Guardia</h2>
+                        </div>
+                    </div>
+                    <p class="module-desc text-sm md:text-base">Dispositivos moviles de seguridad</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Celulares" class="btn-arcade w-full font-semibold text-slate-900">Acceder</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+    </script>
+}

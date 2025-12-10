@@ -1,0 +1,152 @@
+@page "/Autoserv"
+@model MaestroDeCajasWeb.Pages.Autoserv.IndexModel
+
+@{
+    ViewData["Title"] = "Autoservicio - Kioskos";
+}
+
+<div class="menu-hero w-full max-w-6xl mx-auto mt-10 mb-12 px-4 space-y-6">
+    <div class="glass neon-border module-auto hud-panel">
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.35em] text-lime-100/80">Autoservicio</p>
+                    <h2 class="text-3xl md:text-4xl font-bold cyber-glow tracking-[0.2em]">Gestion Autoservicio</h2>
+                </div>
+                <div class="flex gap-3">
+                    <a asp-page="Create" class="btn-arcade module-auto btn-arcade-sm font-semibold text-slate-900">
+                        Nuevo Registro
+                    </a>
+                    <a asp-page="/Index" class="btn-arcade btn-arcade-neutral btn-arcade-sm font-semibold">
+                        Volver
+                    </a>
+                </div>
+            </div>
+            <div class="hud-search">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7" />
+                        <line x1="16.65" y1="16.65" x2="21" y2="21" />
+                    </svg>
+                </span>
+                <input id="auto-search" type="search" placeholder="Buscar autoservicio..." />
+            </div>
+        </div>
+    </div>
+
+    @if (Model.Lista.Any())
+    {
+        <div class="glass neon-border module-auto hud-panel overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="hud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>COD_SUCURSAL</th>
+                            <th>NRO_CAJA</th>
+                            <th>PISO</th>
+                            <th>DEPARTAMENTO</th>
+                            <th>MAC WIFI</th>
+                            <th>CODIGO ACTIVACION</th>
+                            <th>NRO SERIE PINPAD</th>
+                            <th>DDLL</th>
+                            <th>IP</th>
+                            <th>Ultima Actualizacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Lista)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.COD_SUCURSAL</td>
+                                <td>@item.NRO_CAJA</td>
+                                <td>@item.PISO</td>
+                                <td>@item.DEPARTAMENTO</td>
+                                <td>@item.MAC_WIFI</td>
+                                <td>@item.CODIGO_ACTIVACION</td>
+                                <td>@item.NUMERO_SERIE_PINPAD</td>
+                                <td>@item.DDLL</td>
+                                <td>@item.IP</td>
+                                <td>@item.UltimaActualizacion</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-2">
+                                        <a asp-page="Edit" asp-route-id="@item.Id" class="table-btn">Editar</a>
+                                        <a asp-page="Delete" asp-route-id="@item.Id" class="table-btn table-btn-danger">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="glass neon-border module-auto hud-panel text-center text-gray-100">
+            No hay registros de autoservicio.
+            <a asp-page="Create" class="btn-arcade module-auto btn-arcade-sm font-semibold text-slate-900 ml-2 inline-flex">
+                Crear uno
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        (() => {
+            const nodes = Array.from(document.querySelectorAll('[data-rotate]'));
+
+            nodes.forEach((el) => {
+                const phrases = (el.dataset.rotate || "").split("|").map(s => s.trim()).filter(Boolean);
+                if (!phrases.length) return;
+
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let deleting = false;
+
+                const tick = () => {
+                    const current = phrases[phraseIndex];
+                    el.textContent = current.slice(0, charIndex);
+
+                    const atEnd = charIndex === current.length;
+                    const atStart = charIndex === 0;
+
+                    if (!deleting && !atEnd) {
+                        charIndex++;
+                    } else if (!deleting && atEnd) {
+                        deleting = true;
+                        setTimeout(tick, 1200);
+                        return;
+                    } else if (deleting && !atStart) {
+                        charIndex--;
+                    } else if (deleting && atStart) {
+                        deleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                    }
+
+                    const delay = deleting ? 50 + Math.random() * 40 : 70 + Math.random() * 60;
+                    setTimeout(tick, delay);
+                };
+
+                tick();
+            });
+        })();
+
+        (() => {
+            const input = document.getElementById('auto-search');
+            const rows = Array.from(document.querySelectorAll('.hud-table tbody tr'));
+            if (!input || !rows.length) return;
+
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(q) ? '' : 'none';
+                });
+            });
+        })();
+    </script>
+}

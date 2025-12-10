@@ -1,0 +1,105 @@
+@page
+@model MaestroDeCajasWeb.Pages.RPOS.CreateModel
+@{
+    ViewData["Title"] = "Crear RPOS";
+}
+
+<div class="container mt-4">
+    <h2>Crear Nuevo RPOS</h2>
+    <hr />
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.COD_SUCURSAL" class="form-label">Código Sucursal *</label>
+                <input asp-for="Rpos.COD_SUCURSAL" class="form-control" required />
+                <span asp-validation-for="Rpos.COD_SUCURSAL" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.NRO_CAJA" class="form-label">Nro. Caja *</label>
+                <input asp-for="Rpos.NRO_CAJA" class="form-control" required />
+                <span asp-validation-for="Rpos.NRO_CAJA" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.TIPO_DISPOSITIVO" class="form-label">Tipo Dispositivo *</label>
+                <input asp-for="Rpos.TIPO_DISPOSITIVO" class="form-control" required />
+                <span asp-validation-for="Rpos.TIPO_DISPOSITIVO" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.MODELO" class="form-label">Modelo *</label>
+                <input asp-for="Rpos.MODELO" class="form-control" required />
+                <span asp-validation-for="Rpos.MODELO" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.MAC_WIFI" class="form-label">MAC WiFi *</label>
+                <input asp-for="Rpos.MAC_WIFI" class="form-control" required />
+                <span asp-validation-for="Rpos.MAC_WIFI" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.CODIGO_ACTIVACION" class="form-label">Código Activación *</label>
+                <input asp-for="Rpos.CODIGO_ACTIVACION" class="form-control" required />
+                <span asp-validation-for="Rpos.CODIGO_ACTIVACION" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.FUNCIONANDO" class="form-label">Funcionando *</label>
+                <input asp-for="Rpos.FUNCIONANDO" class="form-control" required />
+                <span asp-validation-for="Rpos.FUNCIONANDO" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.NUMERO_SERIE_PINPAD" class="form-label">Nro. Serie Pinpad *</label>
+                <input asp-for="Rpos.NUMERO_SERIE_PINPAD" class="form-control" required />
+                <span asp-validation-for="Rpos.NUMERO_SERIE_PINPAD" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.DDLL" class="form-label">DDLL *</label>
+                <input asp-for="Rpos.DDLL" class="form-control" required />
+                <span asp-validation-for="Rpos.DDLL" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Rpos.PINPAD_FUNCIONA" class="form-label">Pinpad Funciona *</label>
+                <input asp-for="Rpos.PINPAD_FUNCIONA" class="form-control" required />
+                <span asp-validation-for="Rpos.PINPAD_FUNCIONA" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Rpos.ESPECIFICAR_ERROR" class="form-label">Especificar Error *</label>
+            <input asp-for="Rpos.ESPECIFICAR_ERROR" class="form-control" required />
+            <span asp-validation-for="Rpos.ESPECIFICAR_ERROR" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <input asp-for="Rpos.UltimaActualizacion" type="hidden" />
+        </div>
+
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary">Crear</button>
+            <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

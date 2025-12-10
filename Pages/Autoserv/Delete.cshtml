@@ -1,0 +1,12 @@
+﻿@page "/Autoserv/Delete"
+@model MaestroDeCajasWeb.Pages.Autoserv.DeleteModel
+
+<h2 class="text-xl font-bold mb-4">Confirmar eliminación</h2>
+
+<p>¿Seguro que deseas eliminar el registro?</p>
+
+<form method="post">
+    <input type="hidden" asp-for="Registro.Id" />
+    <button class="btn btn-error mt-4" type="submit">Eliminar</button>
+    <a class="btn btn-secondary mt-4" href="/Autoserv">Cancelar</a>
+</form>

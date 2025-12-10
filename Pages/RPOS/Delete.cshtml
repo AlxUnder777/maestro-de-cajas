@@ -1,0 +1,44 @@
+@page "{id:int}"
+@model MaestroDeCajasWeb.Pages.RPOS.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar RPOS";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar RPOS</h2>
+    <hr />
+
+    <h3>¿Está seguro que desea eliminar este registro?</h3>
+
+    <div class="alert alert-warning">
+        <strong>Esta acción no se puede deshacer.</strong>
+    </div>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@Model.Rpos.Id</dd>
+
+        <dt class="col-sm-3">Código Sucursal:</dt>
+        <dd class="col-sm-9">@Model.Rpos.COD_SUCURSAL</dd>
+
+        <dt class="col-sm-3">Nro. Caja:</dt>
+        <dd class="col-sm-9">@Model.Rpos.NRO_CAJA</dd>
+
+        <dt class="col-sm-3">Tipo Dispositivo:</dt>
+        <dd class="col-sm-9">@Model.Rpos.TIPO_DISPOSITIVO</dd>
+
+        <dt class="col-sm-3">Modelo:</dt>
+        <dd class="col-sm-9">@Model.Rpos.MODELO</dd>
+
+        <dt class="col-sm-3">MAC WiFi:</dt>
+        <dd class="col-sm-9">@Model.Rpos.MAC_WIFI</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Rpos.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+

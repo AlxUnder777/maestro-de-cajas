@@ -1,0 +1,44 @@
+@page "{id:int}"
+@model MaestroDeCajasWeb.Pages.Celulares.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Celular de Guardia";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar Celular de Guardia</h2>
+    <hr />
+
+    <h3>¿Está seguro que desea eliminar este registro?</h3>
+
+    <div class="alert alert-warning">
+        <strong>Esta acción no se puede deshacer.</strong>
+    </div>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.Id</dd>
+
+        <dt class="col-sm-3">Código Sucursal:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.COD_SUCURSAL</dd>
+
+        <dt class="col-sm-3">MAC WiFi:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.MAC_WIFI</dd>
+
+        <dt class="col-sm-3">Uso:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.USO</dd>
+
+        <dt class="col-sm-3">Funcionando:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.FUNCIONANDO</dd>
+
+        <dt class="col-sm-3">Especificar Error:</dt>
+        <dd class="col-sm-9">@Model.CelularGuardia.ESPECIFICAR_ERROR</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="CelularGuardia.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+

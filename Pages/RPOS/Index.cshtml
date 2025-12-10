@@ -1,0 +1,156 @@
+@page
+@model MaestroDeCajasWeb.Pages.RPOS.IndexModel
+@{
+    ViewData["Title"] = "Gestion RPOS";
+}
+
+<div class="menu-hero w-full max-w-6xl mx-auto mt-10 mb-12 px-4 space-y-6">
+    <div class="glass neon-border module-rpos hud-panel">
+        <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                    <div>
+                    <p class="text-sm uppercase tracking-[0.35em] text-purple-100/80">RPOS</p>
+                    <h2 class="text-3xl md:text-4xl font-bold cyber-glow tracking-[0.2em]">Gestion RPOS</h2>
+                    </div>
+                    <div class="flex gap-3">
+                        <a asp-page="Create" class="btn-arcade module-rpos btn-arcade-sm font-semibold text-slate-900">
+                            Nuevo RPOS
+                        </a>
+                        <a asp-page="/Index" class="btn-arcade btn-arcade-neutral btn-arcade-sm font-semibold">
+                            Volver
+                        </a>
+                    </div>
+                </div>
+            <div class="hud-search">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7" />
+                        <line x1="16.65" y1="16.65" x2="21" y2="21" />
+                    </svg>
+                </span>
+                <input id="rpos-search" type="search" placeholder="Buscar RPOS..." />
+            </div>
+        </div>
+    </div>
+
+    @if (Model.RposList.Any())
+    {
+        <div class="glass neon-border module-rpos hud-panel overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="hud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Codigo Sucursal</th>
+                            <th>Nro. Caja</th>
+                            <th>Tipo Dispositivo</th>
+                            <th>Modelo</th>
+                            <th>MAC WiFi</th>
+                            <th>Codigo Activacion</th>
+                            <th>Funcionando</th>
+                            <th>Nro. Serie Pinpad</th>
+                            <th>DDLL</th>
+                            <th>Pinpad Funciona</th>
+                            <th>Especificar Error</th>
+                            <th>Ultima Actualizacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.RposList)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.COD_SUCURSAL</td>
+                                <td>@item.NRO_CAJA</td>
+                                <td>@item.TIPO_DISPOSITIVO</td>
+                                <td>@item.MODELO</td>
+                                <td>@item.MAC_WIFI</td>
+                                <td>@item.CODIGO_ACTIVACION</td>
+                                <td>@item.FUNCIONANDO</td>
+                                <td>@item.NUMERO_SERIE_PINPAD</td>
+                                <td>@item.DDLL</td>
+                                <td>@item.PINPAD_FUNCIONA</td>
+                                <td>@item.ESPECIFICAR_ERROR</td>
+                                <td>@item.UltimaActualizacion</td>
+                                <td>
+                                    <div class="flex flex-wrap gap-2">
+                                        <a asp-page="Edit" asp-route-id="@item.Id" class="table-btn">Editar</a>
+                                        <a asp-page="Delete" asp-route-id="@item.Id" class="table-btn table-btn-danger">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="glass neon-border module-rpos hud-panel text-center text-gray-100">
+            No hay registros de RPOS.
+            <a asp-page="Create" class="btn-arcade module-rpos btn-arcade-sm font-semibold text-slate-900 ml-2 inline-flex">
+                Crear el primero
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        (() => {
+            const nodes = Array.from(document.querySelectorAll('[data-rotate]'));
+
+            nodes.forEach((el) => {
+                const phrases = (el.dataset.rotate || "").split("|").map(s => s.trim()).filter(Boolean);
+                if (!phrases.length) return;
+
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let deleting = false;
+
+                const tick = () => {
+                    const current = phrases[phraseIndex];
+                    el.textContent = current.slice(0, charIndex);
+
+                    const atEnd = charIndex === current.length;
+                    const atStart = charIndex === 0;
+
+                    if (!deleting && !atEnd) {
+                        charIndex++;
+                    } else if (!deleting && atEnd) {
+                        deleting = true;
+                        setTimeout(tick, 1200);
+                        return;
+                    } else if (deleting && !atStart) {
+                        charIndex--;
+                    } else if (deleting && atStart) {
+                        deleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                    }
+
+                    const delay = deleting ? 50 + Math.random() * 40 : 70 + Math.random() * 60;
+                    setTimeout(tick, delay);
+                };
+
+                tick();
+            });
+        })();
+
+        (() => {
+            const input = document.getElementById('rpos-search');
+            const rows = Array.from(document.querySelectorAll('.hud-table tbody tr'));
+            if (!input || !rows.length) return;
+
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(q) ? '' : 'none';
+                });
+            });
+        })();
+    </script>
+}
+
