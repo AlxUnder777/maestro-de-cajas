@@ -3,3 +3,14 @@
 
 
 
+/* panel-head overrides */
+.panel-head{display:grid;grid-template-columns:1fr;gap:1rem;align-items:flex-start}
+@media (min-width:768px){.panel-head{grid-template-columns:1fr auto;gap:1.25rem}}
+.panel-eyebrow{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(226,232,240,.7)}
+.panel-title{font-size:clamp(1.9rem,3vw,2.5rem);letter-spacing:.18em;font-weight:800;color:#f8fbff;text-shadow:0 0 12px rgba(0,229,255,.24),0 0 18px rgba(0,0,0,.35)}
+.panel-subtitle{color:rgba(226,232,240,.78);letter-spacing:.08em;font-size:.98rem}
+.panel-actions{display:flex;flex-direction:column;gap:.75rem;width:min(480px,100%);margin-left:auto}
+@media (min-width:768px){.panel-actions{flex-direction:row;align-items:center;justify-content:flex-end;gap:.85rem}}
+.panel-actions .btn-row{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:flex-end}
+.hud-search.slim{width:100%}
+.hud-search.slim input{border-radius:.85rem;background:rgba(12,19,32,.92);padding:.7rem 1rem .7rem 2.6rem}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaestroDeCajasWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e8251170b1d2c6b3ca051f380c01e856ae0a47a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+424fcef72416e4f9904d14fa0f45a5f68b91b0b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaestroDeCajasWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaestroDeCajasWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -132,4 +132,12 @@ C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.
 C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.0\compressed\z8s7wg8zgu-bzt7xsg7nh.gz
 C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.0\compressed\gbn7pp0qws-e9r2lhj8qi.gz
 C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.0\compressed\nececabkq5-nkrytxi3w8.gz
-C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.0\compressed\ljk73jj2ox-zenk53renc.gz
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\web.config
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\appsettings.Development.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\appsettings.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\MaestroDeCajasWeb.deps.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\MaestroDeCajasWeb.runtimeconfig.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\MaestroDeCajasWeb.staticwebassets.endpoints.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\package-lock.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\bin\Debug\net9.0\publish\package.json
+C:\Users\juan\Desktop\juegoC\MaestroDeCajasWeb\MaestroDeCajasWeb\obj\Debug\net9.0\compressed\ljk73jj2ox-nzcnlj1ic2.gz
