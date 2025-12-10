@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" fill="none"/>
+  <g filter="url(#glow)">
+    <text x="96" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="180" font-weight="400"
+          fill="none" stroke="#00E5FF" stroke-width="4" stroke-linejoin="round" opacity="0.75">
+      R
+    </text>
+    <text x="96" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="180" font-weight="400"
+          fill="#0F1A2A" stroke="none" opacity="0.9">
+      R
+    </text>
+  </g>
+  <circle cx="40" cy="40" r="2" fill="#00E5FF" opacity="0.6"/>
+  <circle cx="280" cy="80" r="2" fill="#3CFF8F" opacity="0.6"/>
+  <path d="M20 280 H300" stroke="#00E5FF" stroke-width="1" opacity="0.08"/>
+  <path d="M40 0 V320" stroke="#3CFF8F" stroke-width="1" opacity="0.08"/>
+  <defs>
+    <filter id="glow" x="0" y="0" width="320" height="320" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
